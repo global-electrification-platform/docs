@@ -19,8 +19,7 @@
     "postinstall": "[ -f _config-dev.js ] || echo \"module.exports = {\n  baseurl: 'http://localhost:3000'\n};\" > _config-dev.js",
     "serve": "DS_ENV=development gulp collecticons && DS_ENV=development gulp serve",
     "build": "DS_ENV=production NODE_ENV=production gulp",
-    "lint": "eslint app/assets/scripts/ --ext .js",
-    "test": "echo \"No tests\" && exit 0"
+    "lint": "eslint app/assets/scripts/ --ext .js"
   },
   "engines": {
     "node": "8.x"
@@ -52,13 +51,13 @@
     "del": "^3.0.0",
     "ejs": "^2.5.6",
     "envify": "^4.1.0",
-    "eslint": "^5.1.0",
-    "eslint-config-standard": "^11.0.0",
+    "eslint": "^5.12.0",
+    "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^7.0.1",
-    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.4.0",
-    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-standard": "^4.0.0",
     "gulp": "^3.9.1",
     "gulp-cache": "^1.0.1",
     "gulp-csso": "^3.0.0",
@@ -96,6 +95,5 @@
     "vinyl-source-stream": "^2.0.0",
     "watchify": "^3.9.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

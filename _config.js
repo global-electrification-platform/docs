@@ -1,7 +1,7 @@
 module.exports = {
-  baseurl: 'http://devseed.com/doc-seed',
-  title: 'Doc Seed',
-  description: 'A quick way to create a documentation site',
+  baseurl: 'http://developmentseed.github.io/gep-docs',
+  title: 'Global Electrification Platform',
+  description: 'Documentation',
 
   attribution: {
     role: 'Developed for',
@@ -12,6 +12,7 @@ module.exports = {
 
   sectionsMeta: {
     's0-introduction': 'Introduction',
-    's1-components': 'Components'
+    's1-preparing-the-data': 'Preparing the data',
+    's2-ingest-tool': 'Using the ingest tool'
   }
 };

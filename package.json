@@ -1,10 +1,10 @@
 {
-  "name": "doc-seed",
+  "name": "gep-docs",
   "version": "0.1.0",
-  "description": "Development Seed's documentation site",
+  "description": "GEP Documentation",
   "repository": {
     "type": "git",
-    "url": "https://github.com/developmentseed/doc-seed"
+    "url": "https://github.com/developmentseed/gep-docs"
   },
   "author": {
     "name": "Development Seed",
@@ -12,7 +12,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/developmentseed/doc-seed/issues"
+    "url": "https://github.com/developmentseed/gep-docs/issues"
   },
   "homepage": "",
   "scripts": {

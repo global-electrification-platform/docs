@@ -30,7 +30,7 @@ jobs:
       - run:
           name: Building site
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+            if [ "${CIRCLE_BRANCH}" == "${PRODUCTION_BRANCH}" ]; then
               yarn build
             else
               echo "Skip building site"
@@ -43,14 +43,14 @@ jobs:
       - run:
           name: Deploy to GH Pages
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+            if [ "${CIRCLE_BRANCH}" == "${PRODUCTION_BRANCH}" ]; then
               cd build
               git init
-              git config user.name "Devseed-CI"
-              git config user.email "dev@developmentseed.org"
+              git config user.name "$GH_NAME"
+              git config user.email "$GH_EMAIL"
               git add .
               git commit -m "CI deploy [skip ci]"
-              git remote add origin git@github.com:developmentseed/gep-docs.git
+              git remote add origin $GH_REF
               git push origin --force --quiet HEAD:gh-pages
               rm -rf .git
             else

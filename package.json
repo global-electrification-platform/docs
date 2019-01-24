@@ -19,7 +19,8 @@
     "postinstall": "[ -f _config-dev.js ] || echo \"module.exports = {\n  baseurl: 'http://localhost:3000'\n};\" > _config-dev.js",
     "serve": "DS_ENV=development gulp collecticons && DS_ENV=development gulp serve",
     "build": "DS_ENV=production NODE_ENV=production gulp",
-    "lint": "eslint app/assets/scripts/ --ext .js"
+    "lint": "eslint app/assets/scripts/ --ext .js",
+    "test": "echo \"No tests\" && exit 0"
   },
   "engines": {
     "node": "8.x"

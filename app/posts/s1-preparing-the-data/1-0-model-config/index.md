@@ -9,7 +9,7 @@ layout: post.html
 A YAML file describes the model configuration and is used to set up the GEP Explorer. It must contain the following properties:
 
 
-- `id`: unique identifier for model. Can be any string, but [ISO 3166-1 alpha 2 country codes](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) and a integer incremented between versions are recommended. This id and the filename must match;
+- `id`: unique identifier for model. Can be any string, but [ISO 3166-1 alpha 2 country codes](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) and a integer incremented between versions are recommended. The id and filename must match;
 - `name`: a short string describing model country, type and version;
 - `description`: a paragraph describing the model;
 - `version`: a string identifying a model version;

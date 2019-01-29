@@ -4,6 +4,16 @@ date: 2019-01-20
 layout: post.html
 ---
 
+The [gep-data-service](https://github.com/developmentseed/gep-data-service) comes with a CLI (command-line interface) tool to import, delete and update the data in the platform.
+To install the CLI, clone the repository locally and follow instructions on "Install Dependencies" section. Once done, the CLI the command can be executed at repository root folder with:
+
+
+    node cli/ [command]
+
+The CLI will interact with the database through a connection string defined through the `PG_CONNECTION_STRING` environment variable.
+
+
+    export PG_CONNECTION_STRING=<connection-string>
 
 ## list
 Outputs the existing models in the database. Example:
@@ -19,7 +29,6 @@ Deletes the models and respective data that match the given ids. Example:
 
 ## validate <path>
 Validates the model and data at the given `path`. The path should point to the directory where the model and data are stored, not to the model itself. Example:
-
 
     node cli/ validate ./data/mw-1/
 

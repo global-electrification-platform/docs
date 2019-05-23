@@ -1,113 +1,48 @@
-<h1 align="center">Doc Seed</h1>
+# GEP - Advanced Documentation Website
 
-Doc seed is a quick way to create a documentation site that can run on any webserver.
+This is the repository for GEP's Advanced Documentation Website, which covers complex topics about the platform like performing data ingests, writing model configurations and running the platform locally.
 
-![](docs/graphics/docseed.png)
+If you have any questions, please [open an issue](https://github.com/global-electrification-platform/docs/issues/new) or [contact the maintainers](http://gep-explorer.surge.sh/about).
 
-## Installation and Usage
 
-The steps below will walk you through setting up your own instance of Doc Seed
+A [static site generator](https://github.com/developmentseed/doc-seed) is used to transform markdown files into the live website. The following sections will give an overview on how to edit content.
 
-### Install Project Dependencies
-To set up the development environment for this website, you'll need to install the following on your system:
 
-- [Node](http://nodejs.org/) v8 (To manage multiple node versions we recommend [nvm](https://github.com/creationix/nvm))
-- [Yarn](https://yarnpkg.com/) Package manager
+## Editing content - via browser
 
-### Install Application Dependencies
+[Prose.io](https://prose.io/#about) editor can be used to make changes to the website via browser, at this link:
 
-If you use [`nvm`](https://github.com/creationix/nvm), activate the desired Node version:
+- https://prose.io/#global-electrification-platform/docs
 
-```
-nvm install
-```
+## Editing content - offline
 
-Install Node modules:
+If you prefer to check changes locally before committing them, [clone this repository](https://help.github.com/en/articles/cloning-a-repository) and follow the steps:
 
-```
-yarn install
-```
+### 1) Install [nvm](https://github.com/creationix/nvm)
 
-## Configuration of Doc Seed
-According to the build environment different config files may be loaded, but all of them override `_config.js`
+### 2) Active required node version
 
-- `_config-staging.js` is loaded for the staging environment
-- `_config-dev.js` is loaded whenever it exists. This file is gitignored and should only be used during development.
+    nvm install
 
-The base structure of a config file is:
-```
-{
-  baseurl: 'http://devseed.com/doc-seed',
-  title: 'Doc Seed',
-  description: 'A quick way to create a documentation site',
+### 3) Install yarn
 
-  attribution: {
-    role: 'Developed for',
-    name: 'Generic Company',
-    logo: 'generic-logo-pos-hor.svg',
-    url: 'https://developmentseed.org'
-  },
+    nvm install -g yarn
 
-  sectionsMeta: {
-    's0-introduction': 'Introduction',
-    's1-components': 'Components'
-  }
-}
-```
+### 4) Install node modules
 
-**baseurl**  
-The url where the site will live, without trailing slash. This is important for using with images and internal links. (See section [Writing Posts](#writing-posts))
+    yarn install
 
-**title** and **description**  
-The title and description of the documentation site. It will appear on the right side
+### 5) Start the app
 
-![](docs/graphics/docseed-title.png)
+    yarn run serve
 
-**attribution**  
-If the documentation site is for a client it may be a good idea to include a page header with the client's information.
+### 6) Access the website at http://localhost:3000
 
-![](docs/graphics/docseed-header.png)
 
-**sectionsMeta**  
-Used to define the labels for each section of the website. (See section [Structure and Navigation](#structure-and-navigation)
+The system will watch files looking for changes, and the website will automatically refresh since it is bundled with livereload.    
 
-## Structure and Navigation
-The content of the site goes inside `app/posts` and is divided by section. Here each folder corresponds to a section for which a label must be defined in the config file.
-This will result in section titles rendered in the sidebar.
+## Markdown files
 
-For example, the following section folders:
-
-![](docs/graphics/posts-folder-section.png)
-
-With the following config (placed in the `_config.js` file):
-```
-sectionsMeta: {
-  's0-introduction': 'Introduction',
-  's1-components': 'Components'
-}
-```
-would result in
-
-![](docs/graphics/docseed-sections.png)
-
-Then, inside each section folder we create a new folder, with a single markdown file, for each post we want.
-The following folder structure:
-
-![](docs/graphics/navigation-folders.png)
-
-would result in
-
-![](docs/graphics/navigation-structure.png)
-
-The navigation is rendered and ordered alphabetically so it is a good idea to prefix the folder names with a number to ensure the order.
-
-Doc Seed also supports nested pages. To add a nested page just create a new folder with the markdown file under the desired parent. This will appear indented in the navigation:
-
-![](docs/graphics/navigation-nested.png)
-
-The urls for each post are created from the section name and the title property defined in the markdown file (see [Writing Posts](#writing-posts) for info about these properties). To avoid overrides, all the posts inside a section must have different titles or their permalink must be changed using the correct property.
-
-## Writing Posts
 The posts are written in [markdown](https://daringfireball.net/projects/markdown/syntax) but `html` is also supported if needed.
 For a post to be processed by Doc Seed it needs to include the `YAML frontmatter` which is the information between the `---` (triple dashes).
 
@@ -143,20 +78,3 @@ To render a variable just use the following syntax `{{varName}}`. This is very u
 ![]({{baseurl}}/assets/graphics/content/docseed.png)
 ```
 
-### Starting the app
-
-```
-yarn run serve
-```
-Compiles the sass files, javascript, and launches the server making the site available at `http://localhost:3000/`
-The system will watch files and execute tasks whenever one of them changes.
-The site will automatically refresh since it is bundled with livereload.
-
-# Deployment
-To prepare the app for deployment run:
-
-```
-yarn run build
-```
-This will package the app and place all the contents in the `dist` directory.
-The app can then be run by any web server.

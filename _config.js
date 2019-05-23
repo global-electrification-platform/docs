@@ -1,5 +1,5 @@
 module.exports = {
-  baseurl: 'http://devseed.com/gep-docs',
+  baseurl: 'https://global-electrification-platform.github.io/docs',
   title: 'Global Electrification Platform',
   description: 'Data ingest documentation',
   sectionsMeta: {

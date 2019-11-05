@@ -4,7 +4,7 @@ module.exports = {
   description: 'Data ingest documentation',
   sectionsMeta: {
     's0-introduction': 'Introduction',
-    's1-preparing-the-data': 'Preparing the data',
+    's1-guides': 'Guides',
     's2-ingest-tool': 'Using the ingest tool'
   }
 };

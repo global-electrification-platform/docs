@@ -18,6 +18,9 @@ A YAML file describes the model configuration and is used to set up the GEP Expl
 - `attribution`: object describing model provider:
   - `author`: name of model provider;
   - `url`: URL to provider website;
+- `sourceData`: object with urls for the model source data
+  - `clusters`: URL to scenario clusters for download
+  - `scenarios`: URL to full scenario data for download
 - `timesteps`:  an array containing the intermediate and final years used on the model, in respective order;
 - `levers`: array of [lever objects]({{baseurl}}/preparing-the-data/levers) describing possible combinations of input variables used on the model. The order of the objects in the array determines the order in the interface.
 - `filters`: array of [filter objects]({{baseurl}}/preparing-the-data/filters) describing filters that can be applied to scenario data. The order of the objects in the array determines the order in the interface.
